@@ -4,7 +4,7 @@
   "description": "OpenAPI Runtime expressions parser and validator.",
   "exports": "./src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "engines": {
     "node": ">=14.16"
@@ -31,8 +31,10 @@
     "apg-js": "^4.1.2"
   },
   "devDependencies": {
-    "husky": "=8.0.1",
     "@commitlint/cli": "=17.1.2",
-    "@commitlint/config-conventional": "=17.1.0"
+    "@commitlint/config-conventional": "=17.1.0",
+    "chai": "=4.3.6",
+    "husky": "=8.0.1",
+    "mocha": "=10.1.0"
   }
 }
