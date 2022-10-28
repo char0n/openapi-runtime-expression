@@ -4,6 +4,7 @@
   "description": "OpenAPI Runtime expressions parser and validator.",
   "exports": "./src/index.js",
   "scripts": {
+    "grammar:compile": "./node_modules/apg-js/bin/apg.sh --in=./src/runtime-expression.bnf --out=./src/runtime-expression.js && cd ./src && mv runtime-expression.js runtime-expression.cjs",
     "test": "mocha"
   },
   "engines": {

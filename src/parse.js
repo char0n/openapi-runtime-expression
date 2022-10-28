@@ -1,9 +1,11 @@
 import ApgExp from 'apg-js/src/apg-exp/apg-exp.js';
 
-import SABNF from './runtime-expression.bnf.js';
+import Grammar from './runtime-expression.cjs';
+
+const grammar = new Grammar();
 
 const parse = (str) => {
-  const apgExp = new ApgExp(SABNF);
+  const apgExp = new ApgExp(grammar);
   return apgExp.exec(str);
 }
 
