@@ -27,6 +27,6 @@ describe('test', function () {
   it('should not detect runtime expression', function () {
     assert.isFalse(test(''));
     assert.isFalse(test('1'));
-    assert.isFalse(test('non sensical string'));
+    assert.isFalse(test('nonsensical string'));
   });
-})
+});
