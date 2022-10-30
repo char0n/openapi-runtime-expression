@@ -28,5 +28,8 @@ describe('test', function () {
     assert.isFalse(test(''));
     assert.isFalse(test('1'));
     assert.isFalse(test('nonsensical string'));
+    assert.isFalse(test(1));
+    assert.isFalse(test(null));
+    assert.isFalse(test(undefined));
   });
 });
