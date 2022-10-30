@@ -2,7 +2,7 @@
 
 [Runtime Expressions](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#runtimeExpression) allow defining values based on information that will only be available within the HTTP message in an actual API call.
 This mechanism is used by [Link Objects](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#linkObject) and [Callback Objects](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.1.0.md#callbackObject)
-of [OpenAPI specification](https://github.com/OAI/OpenAPI-Specification);
+of [OpenAPI specification](https://github.com/OAI/OpenAPI-Specification).
 
 `openapi-runtime-expression` is a **parser** and **validator** for OpenAPI Runtime Expressions. It supports
 Runtime Expressions defined in following OpenAPI specification versions:
