@@ -2,7 +2,11 @@
   "name": "openapi-runtime-expression",
   "version": "0.1.0",
   "description": "OpenAPI Runtime expressions parser and validator.",
-  "exports": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./package.json": "./package.json",
+    "./runtime-expression.bnf": "./src/runtime-expression.bnf"
+  },
   "scripts": {
     "grammar:compile": "./node_modules/apg-js/bin/apg.sh --in=./src/runtime-expression.bnf --out=./src/runtime-expression.js && cd ./src && mv runtime-expression.js runtime-expression.cjs",
     "test": "mocha"
