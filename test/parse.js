@@ -349,4 +349,12 @@ describe('parse', function () {
      });
    });
  });
+
+  context('given non-string input', function () {
+    specify('should throw error', function () {
+      assert.throws(() => parse(1), Error);
+      assert.throws(() => parse(null), Error);
+      assert.throws(() => parse(undefined), Error);
+    });
+  });
 })
