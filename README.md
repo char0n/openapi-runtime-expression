@@ -46,7 +46,7 @@ you can also install it directly from GitHub.
 ### Usage
 
 `openapi-runtime-expression` currently supports **parsing** and **validation**.
-Both parser and validator are based on a superset of [ABNF](https://www.rfc-editor.org/rfc/rfc5234) ([SABNF](directly from a superset of ABNF (SABNF)))
+Both parser and validator are based on a superset of [ABNF](https://www.rfc-editor.org/rfc/rfc5234) ([SABNF](https://cs.github.com/ldthomas/apg-js2/blob/master/SABNF.md))
 and use [apg-js](https://github.com/ldthomas/apg-js) parser generator.
 
 #### Parsing
@@ -240,10 +240,10 @@ Expressions can be embedded into string values by surrounding the expression wit
 
 ## License
 
-`openapi-runtime-expression` is licensed under [Apache 2.0 license](https://github.com/swagger-api/openapi-runtime-expression/blob/main/LICENSE).
-`openapi-runtime-expression` comes with an explicit [NOTICE](https://github.com/swagger-api/openapi-runtime-expression/blob/main/NOTICE) file
+`openapi-runtime-expression` is licensed under [Apache 2.0 license](https://github.com/char0n/openapi-runtime-expression/blob/main/LICENSE).
+`openapi-runtime-expression` comes with an explicit [NOTICE](https://github.com/char0n/openapi-runtime-expression/blob/main/NOTICE) file
 containing additional legal notices and information.
 
 ## Software Bill Of Materials (SBOM)
 
-Software Bill Of materials is available in [sbom.spdx.yaml](https://github.com/swagger-api/openapi-runtime-expression/blob/main/sbom.spdx.yaml) using [SPDX](https://spdx.dev/) language.
+Software Bill Of materials is available in [sbom.spdx.yaml](https://github.com/char0n/openapi-runtime-expression/blob/main/sbom.spdx.yaml) using [SPDX](https://spdx.dev/) language.
