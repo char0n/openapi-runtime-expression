@@ -28,6 +28,15 @@
     "url": "https://github.com/char0n/openapi-runtime-expression/issues"
   },
   "homepage": "https://github.com/char0n/openapi-runtime-expression#readme",
+  "files": [
+    "src/",
+    "LICENSE",
+    "NOTICE",
+    "package.json",
+    "README.md",
+    "sbom.spdx.yaml",
+    "SECURITY.md"
+  ],
   "dependencies": {
     "apg-js": "^4.1.2"
   },
