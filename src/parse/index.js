@@ -32,7 +32,7 @@ const parse = (str) => {
   parser.ast.callbacks.name = nameCallback;
   parser.ast.callbacks.token = tokenCallback;
 
-  const result = parser.parse(grammar, 'expression', str);
+  const result = parser.parse(grammar, 'openapi-runtime-expression', str);
 
   return { result, ast: parser.ast };
 }

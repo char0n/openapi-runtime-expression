@@ -3,10 +3,10 @@ import { assert } from 'chai';
 import { test } from '../src/index.js'
 
 describe('test', function () {
-  it('should detect runtime expression', function () {
+  it('should detect expression', function () {
     assert.isTrue(test('$url'));
     assert.isTrue(test('$method'));
-    assert.isTrue(test('$request.path.eventType'));
+    assert.isTrue(test('$request.path.eventType}'));
     assert.isTrue(test('$request.path.id'));
     assert.isTrue(test('$request.query.queryUrl'));
     assert.isTrue(test('$request.header.content-Type'));
@@ -24,10 +24,12 @@ describe('test', function () {
     assert.isTrue(test('$response.body#/status'));
   });
 
-  it('should not detect runtime expression', function () {
+  it('should not detect expression', function () {
     assert.isFalse(test(''));
     assert.isFalse(test('1'));
     assert.isFalse(test('nonsensical string'));
+    assert.isFalse(test('inside$urlstring'));
+    assert.isFalse(test('inside $url string'));
     assert.isFalse(test(1));
     assert.isFalse(test(null));
     assert.isFalse(test(undefined));
