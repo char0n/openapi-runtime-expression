@@ -12,7 +12,7 @@ describe('parse', function () {
         parseResult.ast.translate(parts);
 
         assert.isTrue(parseResult.result.success);
-        assert.deepEqual(parts, [[ 'expression', '$url' ]]);
+        assert.deepEqual(parts, [[ 'expression', '$url']]);
       });
     });
 
@@ -37,7 +37,7 @@ describe('parse', function () {
 
         assert.isTrue(parseResult.result.success);
         assert.deepEqual(parts, [
-          ['expression', '$request.path.eventType' ],
+          ['expression', '$request.path.eventType'],
           ['source', 'path.eventType'],
           ['path-reference', 'path.eventType'],
           ['name', 'eventType'],
@@ -71,7 +71,7 @@ describe('parse', function () {
 
         assert.isTrue(parseResult.result.success);
         assert.deepEqual(parts, [
-          ['expression', '$request.query.queryUrl' ],
+          ['expression', '$request.query.queryUrl'],
           ['source', 'query.queryUrl'],
           ['query-reference', 'query.queryUrl'],
           ['name', 'queryUrl'],
@@ -88,7 +88,7 @@ describe('parse', function () {
 
         assert.isTrue(parseResult.result.success);
         assert.deepEqual(parts, [
-          ['expression', '$request.header.content-Type' ],
+          ['expression', '$request.header.content-Type'],
           ['source', 'header.content-Type'],
           ['header-reference', 'header.content-Type'],
           ['token', 'content-Type'],
@@ -105,7 +105,7 @@ describe('parse', function () {
 
         assert.isTrue(parseResult.result.success);
         assert.deepEqual(parts, [
-          ['expression', '$request.header.accept' ],
+          ['expression', '$request.header.accept'],
           ['source', 'header.accept'],
           ['header-reference', 'header.accept'],
           ['token', 'accept'],
@@ -139,7 +139,7 @@ describe('parse', function () {
 
         assert.isTrue(parseResult.result.success);
         assert.deepEqual(parts, [
-          ['expression', '$request.header.Server' ],
+          ['expression', '$request.header.Server'],
           ['source', 'header.Server'],
           ['header-reference', 'header.Server'],
           ['token', 'Server'],
@@ -156,7 +156,7 @@ describe('parse', function () {
 
         assert.isTrue(parseResult.result.success);
         assert.deepEqual(parts, [
-          ['expression', '$request.body#/url' ],
+          ['expression', '$request.body#/url'],
           ['source', 'body#/url'],
           ['body-reference', 'body#/url'],
           ['json-pointer', '/url'],
@@ -174,7 +174,7 @@ describe('parse', function () {
 
         assert.isTrue(parseResult.result.success);
         assert.deepEqual(parts, [
-          ['expression', '$request.body#/failedUrl' ],
+          ['expression', '$request.body#/failedUrl'],
           ['source', 'body#/failedUrl'],
           ['body-reference', 'body#/failedUrl'],
           ['json-pointer', '/failedUrl'],
@@ -192,7 +192,7 @@ describe('parse', function () {
 
         assert.isTrue(parseResult.result.success);
         assert.deepEqual(parts, [
-          ['expression', '$request.body#/successUrls/2' ],
+          ['expression', '$request.body#/successUrls/2'],
           ['source', 'body#/successUrls/2'],
           ['body-reference', 'body#/successUrls/2'],
           ['json-pointer', '/successUrls/2'],
@@ -284,7 +284,7 @@ describe('parse', function () {
 
         assert.isTrue(parseResult.result.success);
         assert.deepEqual(parts, [
-          ['expression', '$response.body#/username' ],
+          ['expression', '$response.body#/username'],
           ['source', 'body#/username'],
           ['body-reference', 'body#/username'],
           ['json-pointer', '/username'],
@@ -302,7 +302,7 @@ describe('parse', function () {
 
         assert.isTrue(parseResult.result.success);
         assert.deepEqual(parts, [
-          ['expression', '$response.body#/status' ],
+          ['expression', '$response.body#/status'],
           ['source', 'body#/status'],
           ['body-reference', 'body#/status'],
           ['json-pointer', '/status'],
@@ -312,43 +312,43 @@ describe('parse', function () {
     });
   });
 
- context('given invalid source string', function () {
-   context('empty string', function () {
-     specify('should fail parsing', function () {
-       const parseResult = parse('');
+  context('given invalid source string', function () {
+    context('empty string', function () {
+      specify('should fail parsing', function () {
+        const parseResult = parse('');
 
-       const parts = [];
-       parseResult.ast.translate(parts);
+        const parts = [];
+        parseResult.ast.translate(parts);
 
-       assert.isFalse(parseResult.result.success);
-       assert.lengthOf(parts, 0);
-     });
-   });
+        assert.isFalse(parseResult.result.success);
+        assert.lengthOf(parts, 0);
+      });
+    });
 
-   context('1', function () {
-     specify('should fail parsing', function () {
-       const parseResult = parse('1');
+    context('1', function () {
+      specify('should fail parsing', function () {
+        const parseResult = parse('1');
 
-       const parts = [];
-       parseResult.ast.translate(parts);
+        const parts = [];
+        parseResult.ast.translate(parts);
 
-       assert.isFalse(parseResult.result.success);
-       assert.lengthOf(parts, 0);
-     });
-   });
+        assert.isFalse(parseResult.result.success);
+        assert.lengthOf(parts, 0);
+      });
+    });
 
-   context('nonsensical string', function () {
-     specify('should fail parsing', function () {
-       const parseResult = parse('nonsensical string');
+    context('nonsensical string', function () {
+      specify('should fail parsing', function () {
+        const parseResult = parse('nonsensical string');
 
-       const parts = [];
-       parseResult.ast.translate(parts);
+        const parts = [];
+        parseResult.ast.translate(parts);
 
-       assert.isFalse(parseResult.result.success);
-       assert.lengthOf(parts, 0);
-     });
-   });
- });
+        assert.isFalse(parseResult.result.success);
+        assert.lengthOf(parts, 0);
+      });
+    });
+  });
 
   context('given non-string input', function () {
     specify('should throw error', function () {
@@ -357,4 +357,4 @@ describe('parse', function () {
       assert.throws(() => parse(undefined), Error);
     });
   });
-})
+});

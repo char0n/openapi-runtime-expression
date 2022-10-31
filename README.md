@@ -18,6 +18,7 @@ Runtime Expressions defined in following OpenAPI specification versions:
 - [Getting started](#getting-started)
   - [Installation](#installation)
   - [Usage](#usage)
+    - [Extraction](#extraction)
     - [Parsing](#parsing)
     - [Validation](#validation)
     - [Grammar](#grammar)
@@ -45,9 +46,24 @@ you can also install it directly from GitHub.
 
 ### Usage
 
-`openapi-runtime-expression` currently supports **parsing** and **validation**.
+`openapi-runtime-expression` currently supports **extraction**, **parsing** and **validation**.
 Both parser and validator are based on a superset of [ABNF](https://www.rfc-editor.org/rfc/rfc5234) ([SABNF](https://cs.github.com/ldthomas/apg-js2/blob/master/SABNF.md))
 and use [apg-js](https://github.com/ldthomas/apg-js) parser generator.
+
+#### Extraction
+
+OpenAPI embeds Runtime Expressions into string values surrounded with `{}` curly braces.
+To extract Runtime Expressions from this embedded form, use the **extract** function.
+Extracted Runtime Expression can be used for further parsing of validation.
+
+```js
+import { extract, test, parse } from 'openapi-runtime-expression';
+
+const expression = extract('{$request.header.accept}'); // => '$request.header.accept'
+
+test(expression); // => true
+parse(expression)
+```
 
 #### Parsing
 

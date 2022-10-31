@@ -5,16 +5,16 @@
 module.exports = function grammar(){
   // ```
   // SUMMARY
-  //      rules = 20
+  //      rules = 19
   //       udts = 0
-  //    opcodes = 104
+  //    opcodes = 103
   //        ---   ABNF original opcodes
   //        ALT = 11
   //        CAT = 11
   //        REP = 6
   //        RNM = 21
   //        TLS = 35
-  //        TBS = 11
+  //        TBS = 10
   //        TRG = 9
   //        ---   SABNF superset opcodes
   //        UDT = 0
@@ -47,11 +47,10 @@ module.exports = function grammar(){
   this.rules[12] = {name: 'tchar', lower: 'tchar', index: 12, isBkr: false};
   this.rules[13] = {name: 'CHAR', lower: 'char', index: 13, isBkr: false};
   this.rules[14] = {name: 'escape', lower: 'escape', index: 14, isBkr: false};
-  this.rules[15] = {name: 'quotation-mark', lower: 'quotation-mark', index: 15, isBkr: false};
-  this.rules[16] = {name: 'unescape', lower: 'unescape', index: 16, isBkr: false};
-  this.rules[17] = {name: 'HEXDIG', lower: 'hexdig', index: 17, isBkr: false};
-  this.rules[18] = {name: 'DIGIT', lower: 'digit', index: 18, isBkr: false};
-  this.rules[19] = {name: 'ALPHA', lower: 'alpha', index: 19, isBkr: false};
+  this.rules[15] = {name: 'unescape', lower: 'unescape', index: 15, isBkr: false};
+  this.rules[16] = {name: 'HEXDIG', lower: 'hexdig', index: 16, isBkr: false};
+  this.rules[17] = {name: 'DIGIT', lower: 'digit', index: 17, isBkr: false};
+  this.rules[18] = {name: 'ALPHA', lower: 'alpha', index: 18, isBkr: false};
 
   /* UDTS */
   this.udts = [];
@@ -162,13 +161,13 @@ module.exports = function grammar(){
   this.rules[12].opcodes[13] = {type: 7, string: [96]};// TLS
   this.rules[12].opcodes[14] = {type: 7, string: [124]};// TLS
   this.rules[12].opcodes[15] = {type: 7, string: [126]};// TLS
-  this.rules[12].opcodes[16] = {type: 4, index: 18};// RNM(DIGIT)
-  this.rules[12].opcodes[17] = {type: 4, index: 19};// RNM(ALPHA)
+  this.rules[12].opcodes[16] = {type: 4, index: 17};// RNM(DIGIT)
+  this.rules[12].opcodes[17] = {type: 4, index: 18};// RNM(ALPHA)
 
   /* CHAR */
   this.rules[13].opcodes = [];
   this.rules[13].opcodes[0] = {type: 1, children: [1,2]};// ALT
-  this.rules[13].opcodes[1] = {type: 4, index: 16};// RNM(unescape)
+  this.rules[13].opcodes[1] = {type: 4, index: 15};// RNM(unescape)
   this.rules[13].opcodes[2] = {type: 2, children: [3,4]};// CAT
   this.rules[13].opcodes[3] = {type: 4, index: 14};// RNM(escape)
   this.rules[13].opcodes[4] = {type: 1, children: [5,6,7,8,9,10,11,12,13]};// ALT
@@ -183,43 +182,39 @@ module.exports = function grammar(){
   this.rules[13].opcodes[13] = {type: 2, children: [14,15]};// CAT
   this.rules[13].opcodes[14] = {type: 6, string: [117]};// TBS
   this.rules[13].opcodes[15] = {type: 3, min: 4, max: 4};// REP
-  this.rules[13].opcodes[16] = {type: 4, index: 17};// RNM(HEXDIG)
+  this.rules[13].opcodes[16] = {type: 4, index: 16};// RNM(HEXDIG)
 
   /* escape */
   this.rules[14].opcodes = [];
   this.rules[14].opcodes[0] = {type: 6, string: [92]};// TBS
 
-  /* quotation-mark */
-  this.rules[15].opcodes = [];
-  this.rules[15].opcodes[0] = {type: 6, string: [34]};// TBS
-
   /* unescape */
-  this.rules[16].opcodes = [];
-  this.rules[16].opcodes[0] = {type: 1, children: [1,2,3]};// ALT
-  this.rules[16].opcodes[1] = {type: 5, min: 32, max: 33};// TRG
-  this.rules[16].opcodes[2] = {type: 5, min: 35, max: 91};// TRG
-  this.rules[16].opcodes[3] = {type: 5, min: 93, max: 1114111};// TRG
+  this.rules[15].opcodes = [];
+  this.rules[15].opcodes[0] = {type: 1, children: [1,2,3]};// ALT
+  this.rules[15].opcodes[1] = {type: 5, min: 32, max: 33};// TRG
+  this.rules[15].opcodes[2] = {type: 5, min: 35, max: 91};// TRG
+  this.rules[15].opcodes[3] = {type: 5, min: 93, max: 1114111};// TRG
 
   /* HEXDIG */
-  this.rules[17].opcodes = [];
-  this.rules[17].opcodes[0] = {type: 1, children: [1,2,3,4,5,6,7]};// ALT
-  this.rules[17].opcodes[1] = {type: 4, index: 18};// RNM(DIGIT)
-  this.rules[17].opcodes[2] = {type: 7, string: [97]};// TLS
-  this.rules[17].opcodes[3] = {type: 7, string: [98]};// TLS
-  this.rules[17].opcodes[4] = {type: 7, string: [99]};// TLS
-  this.rules[17].opcodes[5] = {type: 7, string: [100]};// TLS
-  this.rules[17].opcodes[6] = {type: 7, string: [101]};// TLS
-  this.rules[17].opcodes[7] = {type: 7, string: [102]};// TLS
+  this.rules[16].opcodes = [];
+  this.rules[16].opcodes[0] = {type: 1, children: [1,2,3,4,5,6,7]};// ALT
+  this.rules[16].opcodes[1] = {type: 4, index: 17};// RNM(DIGIT)
+  this.rules[16].opcodes[2] = {type: 7, string: [97]};// TLS
+  this.rules[16].opcodes[3] = {type: 7, string: [98]};// TLS
+  this.rules[16].opcodes[4] = {type: 7, string: [99]};// TLS
+  this.rules[16].opcodes[5] = {type: 7, string: [100]};// TLS
+  this.rules[16].opcodes[6] = {type: 7, string: [101]};// TLS
+  this.rules[16].opcodes[7] = {type: 7, string: [102]};// TLS
 
   /* DIGIT */
-  this.rules[18].opcodes = [];
-  this.rules[18].opcodes[0] = {type: 5, min: 48, max: 57};// TRG
+  this.rules[17].opcodes = [];
+  this.rules[17].opcodes[0] = {type: 5, min: 48, max: 57};// TRG
 
   /* ALPHA */
-  this.rules[19].opcodes = [];
-  this.rules[19].opcodes[0] = {type: 1, children: [1,2]};// ALT
-  this.rules[19].opcodes[1] = {type: 5, min: 65, max: 90};// TRG
-  this.rules[19].opcodes[2] = {type: 5, min: 97, max: 122};// TRG
+  this.rules[18].opcodes = [];
+  this.rules[18].opcodes[0] = {type: 1, children: [1,2]};// ALT
+  this.rules[18].opcodes[1] = {type: 5, min: 65, max: 90};// TRG
+  this.rules[18].opcodes[2] = {type: 5, min: 97, max: 122};// TRG
 
   // The `toString()` function will display the original grammar file(s) that produced these opcodes.
   this.toString = function toString(){
@@ -243,7 +238,7 @@ module.exports = function grammar(){
     str += "CHAR = unescape /\n";
     str += "    escape (\n";
     str += "        %x22 /          ; \"    quotation mark  U+0022\n";
-    str += "        %x5C /          ;     reverse solidus U+005C\n";
+    str += "        %x5C /          ; \\    reverse solidus U+005C\n";
     str += "        %x2F /          ; /    solidus         U+002F\n";
     str += "        %x62 /          ; b    backspace       U+0008\n";
     str += "        %x66 /          ; f    form feed       U+000C\n";
@@ -251,8 +246,7 @@ module.exports = function grammar(){
     str += "        %x72 /          ; r    carriage return U+000D\n";
     str += "        %x74 /          ; t    tab             U+0009\n";
     str += "        %x75 4HEXDIG )  ; uXXXX                U+XXXX\n";
-    str += "escape         = %x5C              ; \\\n";
-    str += "quotation-mark = %x22      ; \"\n";
+    str += "escape         = %x5C   ; \\\n";
     str += "unescape       = %x20-21 / %x23-5B / %x5D-10FFFF\n";
     str += "\n";
     str += "; Core rules - https://en.wikipedia.org/wiki/Augmented_Backus%E2%80%93Naur_form\n";

@@ -17,7 +17,7 @@ tchar            = "!" / "#" / "$" / "%" / "&" / "'" / "*" / "+" / "-" / "." / "
 CHAR = unescape /
     escape (
         %x22 /          ; "    quotation mark  U+0022
-        %x5C /          ;     reverse solidus U+005C
+        %x5C /          ; \    reverse solidus U+005C
         %x2F /          ; /    solidus         U+002F
         %x62 /          ; b    backspace       U+0008
         %x66 /          ; f    form feed       U+000C
@@ -25,8 +25,7 @@ CHAR = unescape /
         %x72 /          ; r    carriage return U+000D
         %x74 /          ; t    tab             U+0009
         %x75 4HEXDIG )  ; uXXXX                U+XXXX
-escape         = %x5C              ; \
-quotation-mark = %x22      ; "
+escape         = %x5C   ; \
 unescape       = %x20-21 / %x23-5B / %x5D-10FFFF
 
 ; Core rules - https://en.wikipedia.org/wiki/Augmented_Backus%E2%80%93Naur_form
