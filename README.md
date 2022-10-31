@@ -62,7 +62,7 @@ import { extract, test, parse } from 'openapi-runtime-expression';
 const expression = extract('{$request.header.accept}'); // => '$request.header.accept'
 
 test(expression); // => true
-parse(expression)
+parse(expression); // => { result, ast }
 ```
 
 #### Parsing
