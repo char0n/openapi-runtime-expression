@@ -23,7 +23,7 @@ packages:
     copyrightText: Copyright 2022, Vladimír Gorej
     description: OpenAPI Runtime expressions validator
     licenseComments: See NOTICE file for more information
-    downloadLocation: https://github.com/orgs/swagger-api/packages?repo_name=apidom
+    downloadLocation: https://www.npmjs.com/package/openapi-runtime-expression
     filesAnalyzed: false
     homepage: https://github.com/char0n/openapi-runtime-expression
     licenseDeclared: Apache-2.0
