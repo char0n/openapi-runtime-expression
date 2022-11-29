@@ -215,22 +215,22 @@ String(grammar);
 The runtime expression is defined by the following [ABNF](https://tools.ietf.org/html/rfc5234) syntax
 
 ```abnf
-      expression = ( "$url" / "$method" / "$statusCode" / "$request." source / "$response." source )
-      source = ( header-reference / query-reference / path-reference / body-reference )
-      header-reference = "header." token
-      query-reference = "query." name
-      path-reference = "path." name
-      body-reference = "body" ["#" json-pointer ]
-      json-pointer    = *( "/" reference-token )
-      reference-token = *( unescaped / escaped )
-      unescaped       = %x00-2E / %x30-7D / %x7F-10FFFF
-         ; %x2F ('/') and %x7E ('~') are excluded from 'unescaped'
-      escaped         = "~" ( "0" / "1" )
-        ; representing '~' and '/', respectively
-      name = *( CHAR )
-      token = 1*tchar
-      tchar = "!" / "#" / "$" / "%" / "&" / "'" / "*" / "+" / "-" / "." /
-        "^" / "_" / "`" / "|" / "~" / DIGIT / ALPHA
+expression = ( "$url" / "$method" / "$statusCode" / "$request." source / "$response." source )
+source = ( header-reference / query-reference / path-reference / body-reference )
+header-reference = "header." token
+query-reference = "query." name
+path-reference = "path." name
+body-reference = "body" ["#" json-pointer ]
+json-pointer    = *( "/" reference-token )
+reference-token = *( unescaped / escaped )
+unescaped       = %x00-2E / %x30-7D / %x7F-10FFFF
+   ; %x2F ('/') and %x7E ('~') are excluded from 'unescaped'
+escaped         = "~" ( "0" / "1" )
+  ; representing '~' and '/', respectively
+name = *( CHAR )
+token = 1*tchar
+tchar = "!" / "#" / "$" / "%" / "&" / "'" / "*" / "+" / "-" / "." /
+  "^" / "_" / "`" / "|" / "~" / DIGIT / ALPHA
 ```
 
 Here, `json-pointer` is taken from [RFC6901](https://tools.ietf.org/html/rfc6901), `char` from [RFC7159](https://tools.ietf.org/html/rfc7159#section-7) and `token` from [RFC7230](https://tools.ietf.org/html/rfc7230#section-3.2.6).
