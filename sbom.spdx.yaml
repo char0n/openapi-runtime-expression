@@ -23,19 +23,19 @@ packages:
     copyrightText: Copyright 2022, Vladimír Gorej
     description: OpenAPI Runtime expressions validator
     licenseComments: See NOTICE file for more information
-    downloadLocation: https://www.npmjs.com/package/openapi-runtime-expression
+    downloadLocation: https://registry.npmjs.org/openapi-runtime-expression/-/openapi-runtime-expression-1.1.0.tgz
     filesAnalyzed: false
     homepage: https://github.com/char0n/openapi-runtime-expression
     licenseDeclared: Apache-2.0
     licenseConcluded: Apache-2.0
     originator: "Person: Vladimír Gorej (vladimir.gorej@gmail.com)"
-    versionInfo: 0.1.0
+    versionInfo: 1.1.0
 
   - SPDXID: SPDXRef-apg-js
     name: apg-js
     copyrightText: Copyright (c) 2021 Lowell D. Thomas
     description: Create objects from reusable, composable behaviors.
-    downloadLocation: https://registry.npmjs.org/stampit/-/apg-js-4.1.2.tgz
+    downloadLocation: https://registry.npmjs.org/apg-js/-/apg-js-4.1.2.tgz
     filesAnalyzed: false
     homepage: https://github.com/ldthomas/apg-js
     licenseDeclared: BSD-2-Clause
